@@ -1,0 +1,7 @@
+C:\Users\Slobo\Desktop\web-tracker\web-tracker\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Slobo\Desktop\web-tracker\web-tracker\bin\web-tracker.dll
+C:\Users\Slobo\Desktop\web-tracker\web-tracker\bin\web-tracker.pdb
+C:\Users\Slobo\Desktop\web-tracker\web-tracker\bin\EntityFramework.dll
+C:\Users\Slobo\Desktop\web-tracker\web-tracker\bin\EntityFramework.xml
+C:\Users\Slobo\Desktop\web-tracker\web-tracker\obj\Debug\web-tracker.dll
+C:\Users\Slobo\Desktop\web-tracker\web-tracker\obj\Debug\web-tracker.pdb

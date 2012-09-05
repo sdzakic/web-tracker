@@ -1,0 +1,26 @@
+@model web_tracker.Models.Person
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Person</legend>
+
+    <div class="display-label">Ime</div>
+    <div class="display-field">@Model.Ime</div>
+
+    <div class="display-label">Longitude</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Longitude)</div>
+
+    <div class="display-label">Latitude</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Latitude)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PersonId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

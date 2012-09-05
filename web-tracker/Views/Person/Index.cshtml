@@ -1,0 +1,47 @@
+@model IEnumerable<web_tracker.Models.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Ime
+        </th>
+        <th>
+            Longitude
+        </th>
+        <th>
+            Latitude
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PersonId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonId })
+        </td>
+        <td>
+			@item.Ime
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Longitude)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Latitude)
+        </td>
+    </tr>
+}
+
+</table>
+
+
