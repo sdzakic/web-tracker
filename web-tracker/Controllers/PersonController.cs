@@ -110,6 +110,7 @@ namespace web_tracker.Controllers
             Person person = context.Person.Single(x => x.PersonId == id);
             context.Person.Remove(person);
             context.SaveChanges();
+            // redirect to index!
             return RedirectToAction("Index");
         }
 
