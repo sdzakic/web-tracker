@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using web_tracker.Models;
 
 namespace web_tracker.Controllers
-{   
+{
     public class PersonController : Controller
     {
         private webtrackerContext context = new webtrackerContext();
@@ -19,7 +19,7 @@ namespace web_tracker.Controllers
         public string Index(string Ime)
         {
             Person person = context.Person.Single(x => x.Ime == Ime);
-            return person.Ime + "|"
+            return "Person:" + person.Ime + "|"
                 + person.Longitude + "|"
                 + person.Latitude;
         }
@@ -38,7 +38,7 @@ namespace web_tracker.Controllers
 
         public string Create(string Ime, string Long, string Lat)
         {
-            Person person = new Person(Ime, double.Parse(Long),double.Parse(Lat));
+            Person person = new Person(Ime, double.Parse(Long), double.Parse(Lat));
             try
             {
                 Person personRemove = context.Person.Single(x => x.Ime == Ime);
@@ -46,11 +46,11 @@ namespace web_tracker.Controllers
                 context.SaveChanges();
             }
             catch { }
-            
+
             context.Person.Add(person);
             context.SaveChanges();
             return Ime;
-        } 
+        }
 
         //
         // POST: /Person/Create
@@ -62,15 +62,15 @@ namespace web_tracker.Controllers
             {
                 context.Person.Add(person);
                 context.SaveChanges();
-                return RedirectToAction("Index");  
+                return RedirectToAction("Index");
             }
 
             return View(person);
         }
-        
+
         //
         // GET: /Person/Edit/5
- 
+
         public ActionResult Edit(int id)
         {
             Person person = context.Person.Single(x => x.PersonId == id);
@@ -94,7 +94,7 @@ namespace web_tracker.Controllers
 
         //
         // GET: /Person/Delete/5
- 
+
         public ActionResult Delete(int id)
         {
             Person person = context.Person.Single(x => x.PersonId == id);
@@ -115,7 +115,8 @@ namespace web_tracker.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing) {
+            if (disposing)
+            {
                 context.Dispose();
             }
             base.Dispose(disposing);
